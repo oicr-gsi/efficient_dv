@@ -107,7 +107,8 @@
                      "provider": "TEST"
                     }
                   ]
-              }
+               },
+               "type": "EXTERNAL"
             },
             "EfficientDV.model_serialized": null,
             "EfficientDV.monitoring_script_input": null,
