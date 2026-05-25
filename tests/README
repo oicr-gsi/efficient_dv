@@ -1,0 +1,7 @@
+docker_test succeeds with the output message visible in workflow manager.
+
+However, running this on GCP will require 
+
+ a) enabling docker
+ b) adding gpu nodes
+

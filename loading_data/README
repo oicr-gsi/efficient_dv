@@ -1,0 +1,12 @@
+Some relevant nodes from README on local PC:
+
+## ----- Apptainer instructions (also see in ~/Projects/GSI/WDL/efficient_dv) -------------------------------------//
+
+# Need to run these commands on internet-connected node:
+
+ module load apptainer/1.4.5
+ apptainer pull docker://ubuntu:22.04
+
+# The command above should produce ubuntu_22.04.sif
+
+ apptainer exec ubuntu_22.04.sif echo "Hello from container"

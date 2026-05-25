@@ -1,0 +1,32 @@
+{
+    "EfficientDV.base_file_name": "414004",
+    "EfficientDV.cram_files": [
+        "s3://ultimagen-workflow-resources-us-east-1/sample_data/germline/414004-L7386-Z0114-CAACATACATCAGAT.cram"
+    ],
+    "EfficientDV.cram_index_files": [
+        "s3://ultimagen-workflow-resources-us-east-1/sample_data/germline/414004-L7386-Z0114-CAACATACATCAGAT.cram.crai"
+    ],
+    "EfficientDV.num_shards": 50,
+    "EfficientDV.make_gvcf": true,
+    "EfficientDV.recalibrate_vaf": false,
+    "EfficientDV.is_somatic": false,
+    "EfficientDV.single_strand_filter": false,
+    "EfficientDV.min_fraction_single_strand_non_snps": 0.15,
+    "EfficientDV.reference_genome": "hg38",
+    "EfficientDV.preemptible_tries": 2,
+    "EfficientDV.cap_at_optimal_coverage": false,
+    "EfficientDV.normalize_strand_bias": false,
+    "EfficientDV.strong_call_threshold": 1.1,
+    "EfficientDV.model_onnx": "s3://ultimagen-workflow-resources-us-east-1/deepvariant/model/germline/wgs/v1.9/ultima-usb4-amp_pcrfree-germline-model-v1.9.ckpt-420000.batch1500.onnx",
+    "EfficientDV.min_variant_quality_hmer_indels": 5,
+    "EfficientDV.min_variant_quality_exome_hmer_indels": 7,
+    "EfficientDV.min_variant_quality_non_hmer_indels": 0,
+    "EfficientDV.min_variant_quality_snps": 0,
+    "EfficientDV.optimal_coverages": [
+        50
+    ],
+    "EfficientDV.keep_duplicates": true,
+    "EfficientDV.add_ins_size_channel": true,
+    "EfficientDV.cloud_provider_override": "aws",
+    "EfficientDV.monitoring_script_input": "s3://ultimagen-workflow-resources-us-east-1/monitor_1.0.sh"
+}
