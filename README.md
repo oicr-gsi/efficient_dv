@@ -19,21 +19,14 @@ Output|Type|Description
 `output_vcf_index`|File|index of the output vcf file
 `vcf_no_ref_calls`|File|output vcf file with reference calls removed
 `vcf_no_ref_calls_index`|File| = RemoveRefCalls.output_vcf_index
-`call_variants_output_tfrecords`|Array[File]?|Optional array of files, tfrecords 
-`call_variants_output_tfrecords_final`|Array[File]?|Optional array of files, final tfrecords
 `output_gvcf`|File?|Optional GVCF file
 `output_gvcf_index`|File?|Optional index of GVCF file
 `output_gvcf_hcr`|File?|Optional HCR file for GVCF
 `realigned_cram`|File?|Optional realigned CRAM file
 `realigned_cram_index`|File?|Optional index of realigned CRAM
-`flow_order`|String|flow order
 `report_html`|File|QC report file, HTML
 `qc_h5`|File|QC report output, h5 file
 `qc_metrics_h5`|File|QC report output, metrics h5 file
-`num_candidates`|Array[File]|file array, number of candidates
-`num_candidates_as_int`|Int|number of candidates as Int
-`num_weak_candidates`|Array[File]|number of candidates, CallVariantsBoundary output
-`num_weak_candidates_as_int`|Int|number of weak candidates
 
 
 

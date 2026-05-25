@@ -985,20 +985,13 @@ workflow EfficientDV {
     File output_vcf_index   = select_first([ApplyAlleleFrequencyRatioFilter.output_vcf_index, raw_output_vcf_index])
     File vcf_no_ref_calls   = RemoveRefCalls.output_vcf
     File vcf_no_ref_calls_index = RemoveRefCalls.output_vcf_index
-    Array[File]? call_variants_output_tfrecords = call_variants_output_tfrecords_maybe
-    Array[File]? call_variants_output_tfrecords_final = call_variants_output_tfrecords_final_maybe
     File? output_gvcf       = gvcf_maybe
     File? output_gvcf_index = gvcf_index_maybe
     File? output_gvcf_hcr   = gvcf_hcr_maybe
     File? realigned_cram    = realigned_cram_maybe
     File? realigned_cram_index = realigned_cram_index_maybe
-    String flow_order       = flow_order_
     File report_html        = QCReport.qc_report
     File qc_h5              = QCReport.qc_h5
     File qc_metrics_h5      = QCReport.qc_metrics_h5
-    Array[File] num_candidates   = CallVariantNoEnsemble.num_candidates
-    Int num_candidates_as_int    = CallVariantNoEnsemble.num_candidates_as_int
-    Array[File] num_weak_candidates = select_first([CallVariantsBoundary.num_candidates, []])
-    Int num_weak_candidates_as_int = select_first([CallVariantsBoundary.num_candidates_as_int, 0])
   }
 }
