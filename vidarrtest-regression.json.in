@@ -156,7 +156,8 @@
             "EfficientDV.ug_post_processing_extra_args": null,
             "EfficientDV.UGPostProcessing.modules": "apptainer/1.4.5 bcftools/1.9",
             "EfficientDV.UGPostProcessing.timeout": null,
-            "EfficientDV.UGSplitBoundaryCalls.modules": "apptainer/1.4.5"
+            "EfficientDV.UGSplitBoundaryCalls.modules": "apptainer/1.4.5",
+            "EfficientDV.UGSplitBoundaryCalls.timeout": 12
         },
         "description": "Efficient DV workflow test n germline mode with hg38 and downsampled Ultima normal data",
         "engineArguments": {
