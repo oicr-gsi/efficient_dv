@@ -107,6 +107,7 @@
                      "provider": "TEST"
                     }
                   ]
+              }
             },
             "EfficientDV.model_serialized": null,
             "EfficientDV.monitoring_script_input": null,
