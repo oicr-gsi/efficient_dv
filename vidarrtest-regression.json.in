@@ -143,7 +143,7 @@
             "EfficientDV.shuffle_all_samples": null,
             "EfficientDV.single_strand_filter": null,
             "EfficientDV.strand_bias_normalization_thresholds": null,
-            "EfficientDV.strong_call_threshold": null
+            "EfficientDV.strong_call_threshold": null,
             "EfficientDV.ug_call_variants_extra_mem": null,
             "EfficientDV.UGMakeExamples.count_candidates_with_dvtools": null,
             "EfficientDV.ug_make_examples_cpus_override": null,
