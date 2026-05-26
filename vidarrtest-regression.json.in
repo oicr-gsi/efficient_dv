@@ -286,11 +286,61 @@
             "EfficientDV.add_ins_size_channel": true,
             "EfficientDV.allele_frequency_ratio": 10,
             "EfficientDV.annotation_intervals": [
-            "/.mounts/labs/gsi/testdata/efficient_dv/intervals/LCR-hs38.bed",
-            "/.mounts/labs/gsi/testdata/efficient_dv/intervals/mappability.0.bed",
-            "/.mounts/labs/gsi/testdata/efficient_dv/intervals/hmers_7_and_higher.bed",
-            "/.mounts/labs/gsi/testdata/efficient_dv/intervals/ug_hcr.bed",
-            "/.mounts/labs/gsi/testdata/efficient_dv/intervals/gnomad.common.indel.annotation.sort.bed"
+              {"contents": {
+                   "configuration": "/.mounts/labs/gsi/testdata/efficient_dv/intervals/LCR-hs38.bed",
+                   "externalIds": [
+                     {
+                      "id": "TEST",
+                      "provider": "TEST"
+                     }
+                  ]
+                },
+                "type": "EXTERNAL"
+              },
+              {"contents": {
+                   "configuration": "/.mounts/labs/gsi/testdata/efficient_dv/intervals/mappability.0.bed",
+                   "externalIds": [
+                     {
+                      "id": "TEST",
+                      "provider": "TEST"
+                     }
+                  ]
+                },
+                "type": "EXTERNAL"
+              },
+              {"contents": {
+                   "configuration": "/.mounts/labs/gsi/testdata/efficient_dv/intervals/hmers_7_and_higher.bed",
+                   "externalIds": [
+                     {
+                      "id": "TEST",
+                      "provider": "TEST"
+                     }
+                  ]
+                },
+                "type": "EXTERNAL"
+              },
+              {"contents": {
+                   "configuration": "/.mounts/labs/gsi/testdata/efficient_dv/intervals/ug_hcr.bed",
+                   "externalIds": [
+                     {
+                      "id": "TEST",
+                      "provider": "TEST"
+                     }
+                  ]
+                },
+                "type": "EXTERNAL"
+              },
+              {"contents": {
+                   "configuration": "/.mounts/labs/gsi/testdata/efficient_dv/intervals/gnomad.common.indel.annotation.sort.bed",
+                   "externalIds": [
+                     {
+                      "id": "TEST",
+                      "provider": "TEST"
+                     }
+                  ]
+                },
+                "type": "EXTERNAL"
+              }
             ],
             "EfficientDV.ApplyAlleleFrequencyRatioFilter.jobMemory": null,
             "EfficientDV.ApplyAlleleFrequencyRatioFilter.modules": "apptainer/1.4.5",
