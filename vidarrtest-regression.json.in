@@ -150,7 +150,7 @@
             "EfficientDV.UGMakeExamples.count_candidates_with_dvtools": null,
             "EfficientDV.ug_make_examples_cpus_override": null,
             "EfficientDV.ug_make_examples_extra_args": null,
-            "EfficientDV.ug_make_examples_memory_override": null,
+            "EfficientDV.ug_make_examples_memory_override": 12,
             "EfficientDV.UGMakeExamples.modules": "gatk/4.6.2.0 samtools/1.14 apptainer/1.4.5",
             "EfficientDV.UGMakeExamples.timeout": null,
             "EfficientDV.UGPostProcessing.disk_size": null,
@@ -160,7 +160,7 @@
             "EfficientDV.UGSplitBoundaryCalls.modules": "apptainer/1.4.5",
             "EfficientDV.UGSplitBoundaryCalls.timeout": 12
         },
-        "description": "Efficient DV workflow test n germline mode with hg38 and downsampled Ultima normal data",
+        "description": "Efficient DV workflow test in germline mode with hg38 and downsampled Ultima normal data",
         "engineArguments": {
            "write_to_cache": false,
            "read_from_cache": false
@@ -277,6 +277,312 @@
                 "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
                 "metrics_compare": "@CHECKOUT@/tests/compare.sh",
                 "output_metrics": "/.mounts/labs/gsi/testdata/efficient_dv/output_metrics/workflow_test_germline.metrics",
+                "type": "script"
+            }
+        ]
+    },
+    { 
+        "arguments": {
+            "EfficientDV.add_ins_size_channel": null,
+            "EfficientDV.allele_frequency_ratio": null,
+            "EfficientDV.annotation_intervals": null,
+            "EfficientDV.ApplyAlleleFrequencyRatioFilter.jobMemory": null,
+            "EfficientDV.ApplyAlleleFrequencyRatioFilter.modules": "apptainer/1.4.5",
+            "EfficientDV.ApplyAlleleFrequencyRatioFilter.timeout": null,
+            "EfficientDV.background_cram_files": [
+               {"contents": {
+                   "configuration": "/.mounts/labs/gsi/testdata/efficient_dv/input_data/416788-OCT_011291_Ly_R_nn_1-10_LB04-01_downsampled.cram",
+                   "externalIds": [
+                     {
+                      "id": "TEST",
+                      "provider": "TEST"
+                     }
+                  ]
+                },
+                "type": "EXTERNAL"
+              }
+            ],
+            "EfficientDV.background_cram_index_files": [
+               {"contents": {
+                   "configuration": "/.mounts/labs/gsi/testdata/efficient_dv/input_data/416788-OCT_011291_Ly_R_nn_1-10_LB04-01_downsampled.cram",
+                   "externalIds": [
+                     {
+                      "id": "TEST",
+                      "provider": "TEST"
+                     }
+                  ]
+                },
+                "type": "EXTERNAL"
+              }
+            ],
+            "EfficientDV.base_file_name": "418897-OCT_011291_Ce_P",
+            "EfficientDV.CalculateBackgroundCoverage.jobMemory": null,
+            "EfficientDV.CalculateBackgroundCoverage.modules": "gatk/4.6.2.0 samtools/1.14",
+            "EfficientDV.CalculateBackgroundCoverage.threads": null,
+            "EfficientDV.CalculateCoverage.jobMemory": null,
+            "EfficientDV.CalculateCoverage.modules": "gatk/4.6.2.0 samtools/1.14",
+            "EfficientDV.CalculateCoverage.threads": null,
+            "EfficientDV.CallingIntervalsLength.jobMemory": null,
+            "EfficientDV.CallingIntervalsLength.timeout": null,
+            "EfficientDV.CallVariantNoEnsemble.modules": "apptainer/1.4.5",
+            "EfficientDV.CallVariantNoEnsemble.timeout": null,
+            "EfficientDV.CallVariantsBoundary.modules": null,
+            "EfficientDV.CallVariantsBoundary.timeout": null,
+            "EfficientDV.call_variants_cpus": null,
+            "EfficientDV.call_variants_gpus": null,
+            "EfficientDV.call_variants_gpu_type": null,
+            "EfficientDV.call_variants_threads": null,
+            "EfficientDV.call_variants_uncompr_buf_size_gb": null,
+            "EfficientDV.candidate_min_mapping_quality": null,
+            "EfficientDV.cap_at_optimal_coverage": null,
+            "EfficientDV.cloud_provider_override": null,
+            "EfficientDV.cram_files": [
+               {"contents": {
+                   "configuration": "/.mounts/labs/gsi/testdata/efficient_dv/input_data/418897-OCT_011291_Ce_P_nn_1-1_LB04-01_downsampled.cram",
+                   "externalIds": [
+                     {
+                      "id": "TEST",
+                      "provider": "TEST"
+                     }
+                  ]
+                },
+                "type": "EXTERNAL"
+              }
+            ],
+            "EfficientDV.cram_index_files": [
+               {"contents": {
+                "configuration": "/.mounts/labs/gsi/testdata/efficient_dv/input_data/418897-OCT_011291_Ce_P_nn_1-1_LB04-01_downsampled.cram.crai",
+                "externalIds": [
+                  {
+                   "id": "TEST",
+                   "provider": "TEST"
+                  }
+                ]
+               },
+               "type": "EXTERNAL"
+              }
+            ],
+            "EfficientDV.dbg_min_base_quality": null,
+            "EfficientDV.dummy_input_for_call_caching": null,
+            "EfficientDV.ensemble_reference_rows": null,
+            "EfficientDV.ensemble_size": null,
+            "EfficientDV.ExtractSampleNameFlowOrder.jobMemory": null,
+            "EfficientDV.ExtractSampleNameFlowOrder.modules": "gatk/4.6.2.0",
+            "EfficientDV.ExtractSampleNameFlowOrder.threads": null,
+            "EfficientDV.ExtractSampleNameFlowOrder.timeout": null,
+            "EfficientDV.GenerateQuickCoverageBed.modules": "gatk/4.6.2.0",
+            "EfficientDV.GenomeSize.jobMemory": null,
+            "EfficientDV.GenomeSize.timeout": null,
+            "EfficientDV.germline_vcf": null,
+            "EfficientDV.Glob.glob": null,
+            "EfficientDV.gq_bins": null,
+            "EfficientDV.gq_resolution_override": null,
+            "EfficientDV.hard_qual_filter": null,
+            "EfficientDV.h_indel_allele_frequency_ratio": null,
+            "EfficientDV.h_indel_vaf_to_pass": null,
+            "EfficientDV.input_flow_order": null,
+            "EfficientDV.IntervalListFromString.jobMemory": null,
+            "EfficientDV.IntervalListFromString.timeout": null,
+            "EfficientDV.intervals_string": null,
+            "EfficientDV.is_somatic": true,
+            "EfficientDV.keep_duplicates": null,
+            "EfficientDV.log_make_examples_progress": null,
+            "EfficientDV.make_gvcf": false,
+            "EfficientDV.max_reads_per_partition": null,
+            "EfficientDV.MergeRealignedCrams.cache_tarball": null,
+            "EfficientDV.MergeRealignedCrams.modules": "samtools/1.14",
+            "EfficientDV.min_base_quality": null,
+            "EfficientDV.min_fraction_hmer_indels": null,
+            "EfficientDV.min_fraction_non_hmer_indels": null,
+            "EfficientDV.min_fraction_single_strand_non_snps": null,
+            "EfficientDV.min_fraction_snps": null,
+            "EfficientDV.min_hmer_plus_one_candidate": null,
+            "EfficientDV.min_read_count_hmer_indels": null,
+            "EfficientDV.min_read_count_non_hmer_indels": null,
+            "EfficientDV.min_read_count_snps": null,
+            "EfficientDV.min_variant_quality_exome_hmer_indels": null,
+            "EfficientDV.min_variant_quality_hmer_indels": null,
+            "EfficientDV.min_variant_quality_non_hmer_indels": null,
+            "EfficientDV.min_variant_quality_snps": null,
+            "EfficientDV.model_onnx": {
+               "contents": {
+                  "configuration": "/.mounts/labs/gsi/testdata/efficient_dv/input_data/wgs_somatic_matched_normal_v1.3.onnx",
+                  "externalIds": [
+                    {
+                     "id": "TEST",
+                     "provider": "TEST"
+                    }
+                  ]
+               },
+               "type": "EXTERNAL"
+            },
+            "EfficientDV.model_serialized": null,
+            "EfficientDV.monitoring_script_input": null,
+            "EfficientDV.no_address_override": null,
+            "EfficientDV.normalize_strand_bias": false,
+            "EfficientDV.num_shards": null,
+            "EfficientDV.optimal_coverages": null,
+            "EfficientDV.optimization_level": null,
+            "EfficientDV.output_call_variants_tfrecords": null,
+            "EfficientDV.output_realignment": null,
+            "EfficientDV.override_target_intervals": null,
+            "EfficientDV.pangenome_haplotypes_index": null,
+            "EfficientDV.pangenome_haplotypes": null,
+            "EfficientDV.p_error": null,
+            "EfficientDV.pileup_min_mapping_quality": null,
+            "EfficientDV.pipeline_version": null,
+            "EfficientDV.preemptible_tries": null,
+            "EfficientDV.prioritize_alt_supporting_reads": null,
+            "EfficientDV.QCReport.jobMemory": null,
+            "EfficientDV.QCReport.modules": null,
+            "EfficientDV.random_seed": null,
+            "EfficientDV.recalibrate_vaf": false,
+            "EfficientDV.ref_dbsnp_index": null,
+            "EfficientDV.ref_dbsnp": null,
+            "EfficientDV.reference_genome": "hg38",
+            "EfficientDV.RemoveRefCalls.jobMemory": null,
+            "EfficientDV.RemoveRefCalls.modules": null,
+            "EfficientDV.RemoveRefCalls.timeout": null,
+            "EfficientDV.ScatterIntervalList.convert_to_bed": null,
+            "EfficientDV.ScatterIntervalList.jobMemory": null,
+            "EfficientDV.ScatterIntervalList.modules": "gatk/4.6.2.0",
+            "EfficientDV.scatter_intervals_break": null,
+            "EfficientDV.show_bg_fields": null,
+            "EfficientDV.shuffle_all_samples": null,
+            "EfficientDV.single_strand_filter": null,
+            "EfficientDV.strand_bias_normalization_thresholds": null,
+            "EfficientDV.strong_call_threshold": null,
+            "EfficientDV.ug_call_variants_extra_mem": null,
+            "EfficientDV.UGMakeExamples.count_candidates_with_dvtools": null,
+            "EfficientDV.ug_make_examples_cpus_override": null,
+            "EfficientDV.ug_make_examples_extra_args": null,
+            "EfficientDV.ug_make_examples_memory_override": 18,
+            "EfficientDV.UGMakeExamples.modules": "gatk/4.6.2.0 samtools/1.14 apptainer/1.4.5",
+            "EfficientDV.UGMakeExamples.timeout": null,
+            "EfficientDV.UGPostProcessing.disk_size": null,
+            "EfficientDV.ug_post_processing_extra_args": null,
+            "EfficientDV.UGPostProcessing.modules": "apptainer/1.4.5 bcftools/1.9",
+            "EfficientDV.UGPostProcessing.timeout": null,
+            "EfficientDV.UGSplitBoundaryCalls.modules": "apptainer/1.4.5",
+            "EfficientDV.UGSplitBoundaryCalls.timeout": 12
+        },
+        "description": "Efficient DV workflow test in somatic mode with hg38 and downsampled Ultima normal data",
+        "engineArguments": {
+           "write_to_cache": false,
+           "read_from_cache": false
+        },
+        "id": "efficient_dv_somatic",
+        "metadata": {
+            "EfficientDV.nvidia_smi_log": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "EfficientDV.output_vcf": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "EfficientDV.output_vcf_index": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "EfficientDV.vcf_no_ref_calls": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "EfficientDV.vcf_no_ref_calls_index": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "EfficientDV.output_gvcf": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "EfficientDV.output_gvcf_index": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "EfficientDV.output_gvcf_hcr": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "EfficientDV.realigned_cram": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "EfficientDV.realigned_cram_index": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "EfficientDV.report_html": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "EfficientDV.qc_h5": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "EfficientDV.qc_metrics_h5": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            }
+        },
+        "validators": [
+            {
+                "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
+                "metrics_compare": "@CHECKOUT@/tests/compare.sh",
+                "output_metrics": "/.mounts/labs/gsi/testdata/efficient_dv/output_metrics/workflow_test_somatic.metrics",
                 "type": "script"
             }
         ]
