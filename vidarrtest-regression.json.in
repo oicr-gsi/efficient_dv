@@ -388,7 +388,7 @@
             "EfficientDV.call_variants_gpus": null,
             "EfficientDV.call_variants_gpu_type": null,
             "EfficientDV.call_variants_threads": null,
-            "EfficientDV.call_variants_uncompr_buf_size_gb": 2,
+            "EfficientDV.call_variants_uncompr_buf_size_gb": 4,
             "EfficientDV.candidate_min_mapping_quality": null,
             "EfficientDV.cap_at_optimal_coverage": false,
             "EfficientDV.cloud_provider_override": null,
