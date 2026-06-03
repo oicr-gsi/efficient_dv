@@ -535,7 +535,7 @@
             "EfficientDV.nvidia_smi_log": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_somatic_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -543,7 +543,7 @@
             "EfficientDV.output_vcf": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_somatic_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -551,7 +551,7 @@
             "EfficientDV.output_vcf_index": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_somatic_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -559,7 +559,7 @@
             "EfficientDV.vcf_no_ref_calls": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_somatic_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -567,7 +567,7 @@
             "EfficientDV.vcf_no_ref_calls_index": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_somatic_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -575,7 +575,7 @@
             "EfficientDV.output_gvcf": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_somatic_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -583,7 +583,7 @@
             "EfficientDV.output_gvcf_index": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_somatic_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -591,7 +591,7 @@
             "EfficientDV.output_gvcf_hcr": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_somatic_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -599,7 +599,7 @@
             "EfficientDV.realigned_cram": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_somatic_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -607,7 +607,7 @@
             "EfficientDV.realigned_cram_index": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_somatic_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -615,7 +615,7 @@
             "EfficientDV.report_html": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_somatic_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -623,7 +623,7 @@
             "EfficientDV.qc_h5": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_somatic_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
@@ -631,7 +631,7 @@
             "EfficientDV.qc_metrics_h5": {
                 "contents": [
                     {
-                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_germline_@JENKINSID@"
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_efficient_dv_somatic_@JENKINSID@"
                     }
                 ],
                 "type": "ALL"
