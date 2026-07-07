@@ -1,7 +1,8 @@
 ## Efficient DV (GSI mod)
 
-This repository contains modified code of Ultima Genomics efficient_dv workflow ().
-This workflow runs on Ultima NGS data and is capable of calling small variants (SNVs) in either germline or somatic modes. Please consider this repository as a work in progress project as not all of it's elements have been thoroughly tested in production environment.
+This repository contains modified code of Ultima Genomics efficient_dv workflow ([https://github.com/Ultimagen/healthomics-workflows/tree/main/workflows/efficient_dv](efficient_dv)).
+This workflow runs on Ultima NGS data and is capable of calling small variants (SNVs) in either germline or somatic modes.
+Please treat this repository as a work in progress project as not all of it's elements have been thoroughly tested in production environment.
 
 
 ### Strusture of the workflow
