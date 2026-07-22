@@ -309,12 +309,14 @@ task ScatterIntervalList {
         grep -v @ "$file" | awk 'BEGIN{OFS="\t"}{print $1,$2-1,$3}' > "$bed_file"
       done
     fi
-    
+   
+    find out -name "*.interval_list" | sort > interval_files.txt
+    find out -name "*.bed" | sort > bed_files.txt 
     >>>
     output {
-        Array[File] out = glob("out/*/*.interval_list")
+        Array[File] out = read_lines("interval_files.txt")
         Int interval_count = read_int('interval_count.txt')
-        Array[File]? out_bed = glob("out/*/*.bed")
+        Array[File]? out_bed = read_lines("bed_files.txt")
         File monitoring_log = "monitoring.log"
     }
     runtime {
