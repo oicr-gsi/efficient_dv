@@ -315,11 +315,6 @@ task UGMakeExamples{
     done
   fi
 
-  find . -type f -name "~{output_prefix}*[0-9].tfrecord.gz" | sort > output_files.list
-  find . -type f -name "~{output_prefix}*.gvcf.tfrecord.gz" | sort > output_gvcf_files.list
-  find . -type f -name "~{output_prefix}*.json" | sort > output_json_files.list
-  find . -type f -name "~{output_prefix}*.gatk" | sort > output_gatk_files.list
-
   >>>
   runtime {
     memory: "~{jobMemory} GB"
@@ -335,10 +330,10 @@ task UGMakeExamples{
     File background_cram_index = "background.cram.crai"
     File realigned_cram = "~{output_prefix}_realign.bam"
     File realigned_cram_index = "~{output_prefix}_realign.bam.bai"
-    Array[File] output_examples = read_lines("output_files.list") 
-    Array[File?] gvcf_records = read_lines("output_gvcf_files.list") 
-    Array[File] output_jsons = read_lines("output_json_files.list") 
-    Array[File] output_gatk = read_lines("output_gatk_files.list") 
+    Array[File] output_examples = glob("~{output_prefix}*[0-9].tfrecord.gz")
+    Array[File?] gvcf_records = glob("~{output_prefix}*.gvcf.tfrecord.gz")
+    Array[File] output_jsons = glob("~{output_prefix}*.json")
+    Array[File] output_gatk = glob("~{output_prefix}*.gatk")
   }
 }
 
@@ -445,9 +440,6 @@ task UGCallVariants{
     num_candidates_val=$(grep -oP 'total batch size \K\d+(?= vectors)' call_variants*.log)
     echo "$num_candidates_val" > "num_candidates_${num_candidates_val}"
     echo "$num_candidates_val" > nc.txt
-    find . -type f -name "call_variants*.log" > log_files.txt
-    find . -type f -name "call_variants*.gz" > callvariants_files.txt
-    find . -type f -name "num_candidates_*" > candidates_files.txt
   >>>
   runtime {
     memory: "~{mem} GB"
@@ -460,9 +452,9 @@ output {
     File monitoring_log = "monitoring.log"
     File nvidia_smi_log = "nvidia-smi.log"
     File params = "params.ini"
-    Array[File] log = read_lines("log_files.txt") 
-    Array[File] output_records = read_lines("callvariants_files.txt") 
-    Array[File] num_candidates = read_lines("candidates_files.txt") 
+    Array[File] log = glob("call_variants*.log")
+    Array[File] output_records = glob("call_variants*.gz")
+    Array[File] num_candidates = glob("num_candidates_*")
     Int num_candidates_as_int = read_int("nc.txt")
     File output_model_serialized = "~{onnx_base_name}.serialized"
   }
@@ -507,9 +499,6 @@ task UGSplitBoundaryCalls {
       --ensembleSplitOutputDV "boundary_examples/${example_basename}"
     done < input_pairs.txt
 
-    find . -type f -name "strong_calls/*.gz" > strong_calls.txt
-    find . -type f -name "boundary_examples/*.tfrecord.gz" > boundary_examples.txt
-
   >>>
   runtime {
     memory: "8 GB"
@@ -518,8 +507,8 @@ task UGSplitBoundaryCalls {
     cpu: 2
   }
   output {
-    Array[File] strong_calls = read_lines("strong_calls.txt") 
-    Array[File] boundary_examples = read_lines("boundary_examples.txt") 
+    Array[File] strong_calls = glob("strong_calls/*.gz") 
+    Array[File] boundary_examples = glob("boundary_examples/*.tfrecord.gz") 
     File monitoring_log = "monitoring.log"
   } 
 }
