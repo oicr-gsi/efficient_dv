@@ -793,6 +793,7 @@ workflow EfficientDV {
         jobMemory = ug_make_examples_memory,
         threads = ug_make_examples_cpus,
         cloud_provider = cloud_provider,
+        temp_dir = temp_dir,
         no_address = no_address
     }
   }
@@ -818,6 +819,7 @@ workflow EfficientDV {
       ensemble_size = 0,# no ensemble 
       reference_rows = ensemble_reference_rows,
       random_seed = random_seed,
+      temp_dir = temp_dir,
       sample_heights = if length(background_cram_files) > 0 || defined(pangenome_haplotypes) then [100, 100] else [100],
       shuffle_all_samples = shuffle_all_samples
   }
@@ -831,6 +833,7 @@ workflow EfficientDV {
         docker = global.ug_make_examples_docker, 
         monitoring_script = monitoring_script,
         no_address = no_address,
+        temp_dir = temp_dir, 
         preemptible_tries = preemptible_tries
     }
 
@@ -850,6 +853,7 @@ workflow EfficientDV {
         call_variants_extra_mem = ug_call_variants_extra_mem,
         optimization_level = optimization_level,
         no_address = no_address,
+        temp_dir = temp_dir,
         ensemble_size = ensemble_size,# ensemble on boundary records
         reference_rows = ensemble_reference_rows,
         random_seed = random_seed,
@@ -910,6 +914,7 @@ workflow EfficientDV {
       dbsnp_index = ref_dbsnp_index,
       extra_args = ug_post_processing_extra_args,
       monitoring_script = monitoring_script,
+      temp_dir = temp_dir,
       no_address = no_address
   }
 
@@ -947,6 +952,7 @@ workflow EfficientDV {
           h_indel_vaf_ratio_to_pass = h_indel_allele_frequency_ratio,
           final_vcf_base_name = base_file_name,
           monitoring_script = monitoring_script,
+          temp_dir = temp_dir,
           ugbio_filtering_docker =  global.ugbio_filtering_docker,
           no_address = no_address
     } 
@@ -973,6 +979,7 @@ workflow EfficientDV {
       output_prefix = output_prefix,
       ref = references.ref_fasta,
       monitoring_script = monitoring_script,
+      temp_dir = temp_dir,
       docker = global.ug_make_examples_docker
   }
 
