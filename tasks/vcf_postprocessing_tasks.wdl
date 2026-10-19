@@ -18,6 +18,7 @@ task ApplyQualFilters {
     String gatk_docker
     String gitc_path
     String modules = "apptainer/1.4.5"
+    String temp_dir
     Int jobMemory = 15
     Int timeout = 12
   }
@@ -28,7 +29,7 @@ task ApplyQualFilters {
 
     set -xeo pipefail
 
-    export APPTAINER_TMPDIR=/tmp
+    export APPTAINER_TMPDIR=~{temp_dir}
     INPUT=$(readlink -f ~{input_vcf})
     INPUITDIR=${INPUT%/*}
     apptainer exec \
@@ -69,6 +70,7 @@ task ApplyAlleleFrequencyRatioFilter {
     Float? h_indel_vaf_ratio_to_pass
     String final_vcf_base_name
     String modules = "apptainer/1.4.5"
+    String temp_dir
     File monitoring_script
     Int jobMemory = 8
     Int timeout = 12
@@ -81,7 +83,7 @@ task ApplyAlleleFrequencyRatioFilter {
     bash ~{monitoring_script} | tee monitoring.log >&2 &
  
     set -xeo pipefail
-    export APPTAINER_TMPDIR=/tmp
+    export APPTAINER_TMPDIR=~{temp_dir}
     INPUT=$(readlink -f ~{input_vcf})
     INPUTDIR=${INPUT%/*}
     apptainer exec \

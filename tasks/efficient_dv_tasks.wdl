@@ -60,6 +60,7 @@ task UGMakeExamples{
 
     String docker
     String modules = "gatk/4.6.2.0 samtools/1.14 apptainer/1.4.5"
+    String temp_dir
     File monitoring_script
     Float jobMemory
     Int threads
@@ -227,7 +228,7 @@ task UGMakeExamples{
 
     # parallel processing: run the tool in different process, each on a different interval part
     pids=()
-    export APPTAINER_TMPDIR=/tmp
+    export APPTAINER_TMPDIR=~{temp_dir}
     REF=$(readlink -f ~{references.ref_fasta})
     REFDIR=${REF%/*}
     for interval_part in $(find . -name "interval_*.bed" | sort); do
@@ -348,6 +349,7 @@ task UGCallVariants{
     Int call_variants_uncompr_buf_size_gb
     String gpu_type
     String modules = "apptainer/1.4.5"
+    String temp_dir
     Int num_gpus
     Int num_cpus
     Int num_threads
@@ -429,7 +431,7 @@ task UGCallVariants{
       ((i++))
     done
 
-    export APPTAINER_TMPDIR=/tmp
+    export APPTAINER_TMPDIR=~{temp_dir}
     apptainer exec \
         --bind ${PWD}:${PWD},${EXDIR}:${EXDIR} \
         --userns \
@@ -467,6 +469,7 @@ task UGSplitBoundaryCalls {
     Float boundary_threshold
     String docker
     String modules = "apptainer/1.4.5"
+    String temp_dir
     Int timeout = 12
     File monitoring_script
     Int preemptible_tries
@@ -477,7 +480,7 @@ task UGSplitBoundaryCalls {
     set -exo pipefail
     examples_file=~{write_lines(examples)}
     calls_file=~{write_lines(calls)}
-    export APPTAINER_TMPDIR=/tmp
+    export APPTAINER_TMPDIR=~{temp_dir}
     bash ~{monitoring_script} | tee monitoring.log >&2 &
     mkdir boundary_examples
     mkdir strong_calls
@@ -533,6 +536,7 @@ task UGPostProcessing{
     File? dbsnp_index
     String flow_order
     String modules = "apptainer/1.4.5 bcftools/1.9"
+    String temp_dir
     Int qual_filter
     Int timeout = 12
     Array[File]? gvcf_records
@@ -617,7 +621,7 @@ task UGPostProcessing{
       cram_string="~{true='$foreground_files_csv;$background_files_csv' false='$foreground_files_csv' defined_background}"
 
       echo "Calculating approximate INDEL variant count"
-      export APPTAINER_TMPDIR=/tmp
+      export APPTAINER_TMPDIR=~{temp_dir}
       REF=$(readlink -f ~{ref})
       REFDIR=${REF%/*}
 
@@ -755,6 +759,7 @@ task QCReport{
     File ref
     File monitoring_script
     String modules = "bcftools/1.9 apptainer/1.4.5"
+    String temp_dir
     String docker
     Int jobMemory = 8
   }
@@ -780,7 +785,7 @@ task QCReport{
 
 
       echo 'Running QC reprort...'
-      export APPTAINER_TMPDIR=/tmp
+      export APPTAINER_TMPDIR=~{temp_dir}
       apptainer exec \
         --bind ${PWD}:${PWD} \
         ${BIND_ARGS} \

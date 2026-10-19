@@ -143,6 +143,7 @@ task AggregateMetricsAndConvertToJson {
         Float? contamination_stdout
         String docker
         String modules = "apptainer/1.4.5"
+        String temp_dir
         Int jobMemory = 2
         Int timeout = 2
         Int preemptible_tries
@@ -161,6 +162,7 @@ task AggregateMetricsAndConvertToJson {
       contamination_stdout: "contamination metrics"
       docker: "docker, we are not using it for this task in GSI version"
       modules: "Used modules"
+      temp_dir: "Temp directory for apptainer"
       no_address: "Flag which is not in use in GSI version"
       jobMemory: "Allocated RAM in Gigs"
       timeout: "Timeout in Hours"
@@ -170,7 +172,7 @@ task AggregateMetricsAndConvertToJson {
     set -xeo pipefail
     bash ~{monitoring_script} | tee monitoring.log >&2 &
 
-    export APPTAINER_TMPDIR=/tmp
+    export APPTAINER_TMPDIR=~{temp_dir}
     apptainer exec \
       --bind ${PWD}:${PWD} \
       ~{docker} \

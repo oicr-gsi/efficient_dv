@@ -42,6 +42,7 @@ workflow EfficientDV {
     # Workflow args
     String pipeline_version = "1.29.1" # !UnusedDeclaration, irrelevant in case of OICR modified version of Efficient DV
     String base_file_name
+    String temp_dir
 
     # Mandatory inputs
     Array[File] cram_files
@@ -643,6 +644,11 @@ workflow EfficientDV {
       type: "Boolean",
       help: "Whether to shuffle all samples during inference",
       category: "param_optional"
+    }
+    temp_dir: {
+        type: "String",
+        help: "Temporary directory, primarily to use with apptainer, container manager",
+        category: "param_optional"
     }
   }
   String cloud_provider = select_first([cloud_provider_override, 'gcp'])
