@@ -10,7 +10,7 @@
             "EfficientDV.background_cram_files": null,
             "EfficientDV.background_cram_index_files": null,
             "EfficientDV.base_file_name": "416788-OCT_011633_Ly_R",
-            "EfficientDV.temp_dir": "/tmp",
+            "EfficientDV.temp_dir": "$TMP",
             "EfficientDV.CalculateBackgroundCoverage.jobMemory": null,
             "EfficientDV.CalculateBackgroundCoverage.modules": "gatk/4.6.2.0 samtools/1.14",
             "EfficientDV.CalculateBackgroundCoverage.threads": null,
@@ -373,7 +373,7 @@
               }
             ],
             "EfficientDV.base_file_name": "418897-OCT_011291_Ce_P",
-            "EfficientDV.temp_dir": "/tmp",
+            "EfficientDV.temp_dir": "$TMP",
             "EfficientDV.CalculateBackgroundCoverage.jobMemory": null,
             "EfficientDV.CalculateBackgroundCoverage.modules": "gatk/4.6.2.0 samtools/1.14",
             "EfficientDV.CalculateBackgroundCoverage.threads": null,
